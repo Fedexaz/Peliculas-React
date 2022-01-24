@@ -8,9 +8,9 @@ import Peliculas from './components/Peliculas';
 function App() {
   return (
     <>
+        <NavBar />
         <Switch>
-          <Route path="/" component={NavBar} />
-          <Route patch="/" exact component={Peliculas} />
+          <Route path="/" exact component={Peliculas} />
           <Route path='/favoritas' component={Favoritas} />
         </Switch>
     </>
