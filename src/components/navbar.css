@@ -1,0 +1,27 @@
+.navBar{
+    display: flex;
+    justify-content: left;
+    padding: 5px;
+    padding-left: 10px;
+    background-color: rgb(231, 213, 248);
+    border-bottom: solid 1px grey;
+}
+
+.navLink{
+    margin-right: 10px;
+    text-decoration: none;
+    background-color: blueviolet;
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+    transition: .2s;
+}
+
+.navLink:hover{
+    background-color: rgb(89, 56, 121);
+    transform: scale(1.02);
+}
+
+.navLink:active{
+    transform: scale(0.9);
+}

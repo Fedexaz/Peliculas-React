@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { mostrarPeliculas, agregarFavoritas } from '../actions/';
 
@@ -11,7 +11,14 @@ function Peliculas () {
 	let [inputPelis, setInputPelis] = useState('');
 	let [addFav, setAddFav] = useState(false);
 	let [lastAddedFav, setLastAddedFav] = useState('');
-	
+	let [added, setAdded] = useState('');
+
+	useEffect(()=>{
+		return function (){
+			clearTimeout(added)
+		}
+	}, [added])
+
 	function handleChange (e) {
 		setInputPelis (e.target.value)
 	}
@@ -21,11 +28,11 @@ function Peliculas () {
 		dispatch (mostrarPeliculas (inputPelis))
 	}
 
-	function addFavourites(e){
+	function addFavourites(e, data){
 		setAddFav(true)
-		setLastAddedFav(e.target.id)
-		dispatch(agregarFavoritas(e.target.id))
-		setTimeout(() => { setAddFav(false) }, 3000)
+		setLastAddedFav(data.title)
+		dispatch(agregarFavoritas(data))
+		setAdded(setTimeout(() => { setAddFav(false) }, 3000))
 	}
 	
 	return (
@@ -43,7 +50,7 @@ function Peliculas () {
         	return (
 				<div key={peli.imdbID}>
             	<Pelicula title={peli.Title} />
-            	<button onClick={e => addFavourites(e)} id={peli.Title}>⭐</button>
+            	<button onClick={e => addFavourites(e, {id: peli.imdbID, title: peli.Title, poster: peli.Poster, year: peli.Year})}>⭐</button>
             	</div>
           	)
         })

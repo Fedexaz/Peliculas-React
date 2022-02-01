@@ -1,0 +1,22 @@
+.cuerpoFavoritas{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.contenedorFavoritas{
+    display: flex;
+    justify-content:center;
+    border-radius: 4px;
+    margin: 0;
+    padding: 0;
+}
+
+.peliFavorita{
+    margin: 0;
+    padding: 0;
+    transition: 0.4s;
+}
+
+.peliFavorita:hover{
+    transform: scale(1.01);
+}
