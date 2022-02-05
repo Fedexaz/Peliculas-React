@@ -13,8 +13,8 @@ function Favoritas () {
         {
           favs.map((e) => {
             return <div key={e.id} className='peliFavorita'>
-                <img src={e.poster} alt={e.title}/>
-                <h3>{e.title} ({e.year})</h3>
+                <img src={e.poster} alt={e.title} width="250px"/>
+                <h5 className='texto-fav'>{e.title} ({e.year})</h5>
               </div>
           })
         }
