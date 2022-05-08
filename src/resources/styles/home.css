@@ -1,0 +1,132 @@
+.container {
+    margin-left: 5px;
+    margin-right: 5px;
+    box-shadow: 5px;
+}
+
+.movies-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.jumbotron {
+    background-image: url('../images/jumbotron.jpg');
+    background-position: 0px -250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    height: 350px;
+}
+
+.busqueda-pelis {
+    padding: 13px;
+    width: 300px;
+    font-size: 20px;
+    outline: none !important;
+    transition: .5s;
+}
+
+.busqueda-pelis:focus {
+    border: 2px solid #CE312E;
+}
+
+.busqueda-pelis-button {
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 40px;
+    background: #0000003b;
+    border: none;
+    transition: .2s;
+}
+
+.busqueda-pelis-button:active {
+    transform: scale(0.9);
+}
+
+.busqueda-pelis-button:hover {
+    background: #fa6969a6;
+}
+
+.buscador-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.movie-card {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    border: 2px solid #83838382;
+    box-shadow: 5px 1px 7px 1px;
+    transition: .5s;
+}
+
+.movie-desc {
+    display: none;
+    color: white;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    z-index: 10000;
+    cursor: pointer;
+}
+
+.movie-card:hover .movie-desc {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    font-size: 14px;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.898);
+    width: 100%;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #CE312E;
+    z-index: 10001;
+}
+
+.nav-item {
+    color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.nav-item:hover {
+    color: black;
+}
+
+.nav-brand {
+    color: white;
+    font-size: 25px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+@media (max-width: 490px) {
+    .buscador-container {
+        justify-content: flex-end;
+    }
+    .busqueda-pelis-button {
+        margin-top: 5px;
+    }
+}

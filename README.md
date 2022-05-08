@@ -6,7 +6,6 @@
 
 * ReactJS
 * Redux 
-* React Redux
 * React router
 
 #### Puedes ver, descargar y modificar el código a tu gusto!
